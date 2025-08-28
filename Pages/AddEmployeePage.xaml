@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="EntrepriseEmploye.Pages.AddEmployeePage"
+             Title="Ajouter employé">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Entry Placeholder="Nom Complet" x:Name="FullNameEntry"/>
+            <Entry Placeholder="Poste" x:Name="PositionEntry"/>
+            <DatePicker x:Name="StartDatePicker" Date="{x:Static sys:DateTime.Now}"/>
+            <Picker x:Name="StatusPicker" Title="Statut">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>En travail</x:String>
+                        <x:String>En congé</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Ajouter" BackgroundColor="Green" TextColor="White" Clicked="OnAddEmployeeClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

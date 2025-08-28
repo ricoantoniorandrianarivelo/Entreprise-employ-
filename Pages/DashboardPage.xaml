@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:EntrepriseEmploye.ViewModels"
+             x:Class="EntrepriseEmploye.Pages.DashboardPage"
+             Title="Tableau de bord">
+    <ContentPage.BindingContext>
+        <vm:DashboardViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Bienvenue dans le Dashboard" FontSize="24" FontAttributes="Bold"/>
+            <Frame BorderColor="Gray" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Employés totaux" FontSize="18"/>
+                    <Label Text="{Binding TotalEmployees}" FontSize="32" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="Green" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="En travail" FontSize="18"/>
+                    <Label Text="{Binding WorkingEmployees}" FontSize="32" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="Orange" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="En congé" FontSize="18"/>
+                    <Label Text="{Binding OnLeaveEmployees}" FontSize="32" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

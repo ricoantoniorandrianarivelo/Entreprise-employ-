@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:EntrepriseEmploye.ViewModels"
+             x:Class="EntrepriseEmploye.Pages.EmployeeListPage"
+             Title="Liste des employés">
+    <ContentPage.BindingContext>
+        <vm:EmployeeListViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <SearchBar Placeholder="Rechercher par nom ou poste" Text="{Binding SearchText}"/>
+            <Picker Title="Filtrer par statut" SelectedItem="{Binding SelectedStatus}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Tous</x:String>
+                        <x:String>En travail</x:String>
+                        <x:String>En congé</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <CollectionView ItemsSource="{Binding FilteredEmployees}" SelectionMode="Single" SelectionChanged="OnEmployeeSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding FullName}" FontAttributes="Bold" FontSize="18"/>
+                                <Label Text="{Binding Status}" FontSize="14" TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

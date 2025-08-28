@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntrepriseEmploye.Pages.EmployeeDetailPage"
+             Title="Détail Employé">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Button Text="Voir Profil" Clicked="OnViewProfileClicked" CommandParameter="{Binding}"/>
+            <Label Text="Nom complet: " FontAttributes="Bold"/>
+            <Label Text="{Binding Employee.Fullname}"/>
+
+            <Label Text="Poste: " FontAttributes="Bold"/>
+            <Label Text="{Binding Employee.Position}"/>
+
+            <Label Text="Date d'embauche: " FontAttributes="Bold"/>
+            <Label Text="{Binding Employee.StartDate, StringFormat='{0:dd MMMM yyyy}'}"/>
+
+            <Label Text="Statut actuel: " FontAttributes="Bold"/>
+            <Label Text="{Binding Employee.Status}"/>
+
+            <Button Text="Analyser avec l'IA" BackgroundColor="DarkSlateBlue" TextColor="White" Clicked="OnAnalyzeIAProfileClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

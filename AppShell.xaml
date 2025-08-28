@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EntrepriseEmploye.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:EntrepriseEmploye.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Title="EntrepriseEmploye">
+
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate pages:DashboardPage}"
+        Route="DashboardPage" />
+
+    <ShellContent
+        Title="Listes d'employés"
+        ContentTemplate="{DataTemplate pages:EmployeeListPage}"
+        Route="EmployeeListPage" />
+
+    <ShellContent
+        Title="Ajout un employé"
+        ContentTemplate="{DataTemplate pages:AddEmployeePage}"
+        Route="AddEmployeePage" />
+
+    <ShellContent
+        Title="Détails des employés"
+        ContentTemplate="{DataTemplate pages:EmployeeDetailPage}"
+        Route="EmployeeDetailPage" />
+
+    <ShellContent
+        Title="Statistiques"
+        ContentTemplate="{DataTemplate pages:StatisticsPage}"
+        Route="StatisticsPage" />
+
+    <ShellContent
+        Title="Paramètres"
+        ContentTemplate="{DataTemplate pages:SettingsPage}"
+        Route="SettingsPage"/>
+
+    <ShellContent 
+        Title="Apropos d'employé"
+        ContentTemplate="{DataTemplate pages:AboutEmployeePage}"
+        Route="AboutEmployeePage"/>
+
+</Shell>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="EntrepriseEmploye.Pages.StatisticsPage"
+             Title="Statistiques">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+            <Label Text="Répatition des Postes"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <microcharts:ChartView x:Name="PostChart"
+                                   HeightRequest="200"/>
+            <Label Text="Moyenne d'ancienne par poste (en mois)"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <microcharts:ChartView x:Name="AncienneteChart" 
+                                   HeightRequest="200"/>
+            <Label Text="Nombre de congés par mois"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <microcharts:ChartView x:Name="CongeChart"
+                                   HeightRequest="200"/>
+            <Label Text="Ajout des employés par mois"
+                   FontSize="20"
+                   HeightRequest="200"/>
+            <microcharts:ChartView x:Name="AjoutChart"
+                                   HeightRequest="200"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

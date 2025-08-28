@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntrepriseEmploye.Pages.ProfilEmployePage"
+             Title="Profil de l'employé">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label x:Name="EmployeeNameLabel"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="DarkSlateBlue"
+                   HorizontalOptions="Center"/>
+            <Label Text="Quels outils utilise-t-il ?"/>
+            <Entry x:Name="ToolsEntry" Placeholder="Ex: Excel, Visual Studio"/>
+
+            <Label Text="Est-ce qu'il écrit du code"/>
+            <Switch x:Name="CodeSwitch"/>
+            <Label Text="Travail-t-il en équipe ?" />
+            <Switch x:Name="TeamworkSwitch"/>
+
+            <Label Text="Fait-il des présentations ou rapports ?"/>
+            <Switch x:Name="ReportsSwitch"/>
+            <Label Text="Domaine principal ?"/>
+            <Picker x:Name="DomainPicker" Title="Choisir un domaine">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Technique</x:String>
+                        <x:String>Administratif</x:String>
+                        <x:String>Managérial</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Analyser et enregistrer" BackgroundColor="DarkBlue" TextColor="White" Clicked="OnAnalyzeClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

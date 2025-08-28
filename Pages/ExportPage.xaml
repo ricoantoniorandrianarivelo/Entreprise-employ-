@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntrepriseEmploye.Pages.ExportPage"
+             Title="Export / Import">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Button Text="Exporter en PDF" Clicked="OnExportPdfClicked"/>
+            <Button Text="Exporter en Excel" Clicked="OnExportExcelClicked"/>
+            <Button Text="Importer un fichier" Clicked="OnImportFileClicked"/>
+            <Button Text="Synchoniser avec le serveur" Clicked="OnSyncClicked" IsVisible="False"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
